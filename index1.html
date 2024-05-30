@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//     1. program to find sum of first and last digit of a number. Using while loop
+
+function sumOfFirstAndLastDigit(number) {
+    let lastDigit = number % 10;
+    let firstDigit = number;
+    while (firstDigit >= 10) {
+        firstDigit = Math.floor(firstDigit / 10);
+    }
+    return firstDigit + lastDigit;
+}
+
+// Example usage
+const number = 12345;
+const sum = sumOfFirstAndLastDigit(number);
+console.log("Sum of first and last digit:", sum);
+
+
+// 2. program to count number of digits in a number. Using while loop
+function countDigits(number) {
+    let count = 0;
+    while (number !== 0) {
+        number = Math.floor(number / 10);
+        count++;
+    }
+    return count;
+}
+
+// Example usage
+const number = 12345;
+const digitCount = countDigits(number);
+console.log("Number of digits:", digitCount);
+
+// 3. Program to Print the Fibonacci Sequence
+function fibonacciSequence(n) {
+    let fib = [0, 1];
+    for (let i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib;
+}
+
+// Example usage
+const n = 10;
+const sequence = fibonacciSequence(n);
+console.log("Fibonacci sequence:", sequence);
+
+// 4. JavaScript Program to Check Armstrong Number
+function isArmstrong(number) {
+    let sum = 0;
+    let temp = number;
+    const digits = number.toString().length;
+    
+    while (temp > 0) {
+        const digit = temp % 10;
+        sum += digit ** digits;
+        temp = Math.floor(temp / 10);
+    }
+    
+    return sum === number;
+}
+
+// Example usage
+const number = 153;
+const isArmstrongNumber = isArmstrong(number);
+console.log(`${number} is Armstrong number:`, isArmstrongNumber);
+
+
+// 5. JavaScript Program to Find the Palindrome Number or not
+function isPalindrome(number) {
+    const reversed = parseInt(number.toString().split('').reverse().join(''));
+    return number === reversed;
+}
+
+// Example usage
+const number = 12321;
+const isPalindromeNumber = isPalindrome(number);
+console.log(`${number} is palindrome number:`, isPalindromeNumber);
+
+</script>
+</html>
